@@ -1,0 +1,59 @@
+<!-- Default form register -->
+<p class="h3 mb-4">Profile Details</p>
+<hr>
+
+<div class=" border border-light " [formGroup]="fbFormGroup">
+
+
+    <div class="row mb-4">
+        <div class="col-lg-6 d-flex ">
+            <!-- First name -->
+            <input type="text" class="form-control col-lg-6"  formControlName="first" touched placeholder="First name" value = {{first}} >
+
+            <!-- Last name -->
+            <input type="text" class="ml-3 form-control col-lg-6" formControlName="last" touched placeholder="Last name" value = {{last}} >
+        </div>
+    </div>
+
+    <!-- E-mail -->
+    <input type="email" id="defaultRegisterFormEmail" formControlName="email" touched class="form-control  col-lg-6 mb-4" value={{email}} placeholder="E-mail">
+
+    <!-- Password -->
+    <div class="input-icons d-flex">
+        <button class="eyeBtn" *ngIf="showBtn" (click)="show()"><fa-icon class="icon" [icon]="faEye"></fa-icon></button>
+        <button class="eyeBtn" *ngIf="hideBtn"(click)="hide()"><fa-icon class="icon" [icon]="faEyeSlash"></fa-icon></button>
+
+        <input type="{{type}}" id="" formControlName="password" touched class="form-control input-field col-lg-5 " placeholder="Password" value={{password}}
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"> 
+    </div>
+   
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+    <!-- Password -->
+    <input type="password" id="" class="form-control  col-lg-6" touched placeholder="Confirm Password" value={{password}}
+        aria-describedby="defaultRegisterFormPasswordHelpBlock">     
+
+
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        At least 8 characters and 1 digit
+    </small>
+    <!-- enroll number -->
+    <input type="text" id="defaultRegisterPhonePassword" touched formControlName="employeeId" class="form-control  col-lg-6" placeholder="Employee number" value={{enroll}}
+        aria-describedby="defaultRegisterFormPhoneHelpBlock">
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+        Optional - for two step authentication
+    </small>
+
+    <!-- Newsletter -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" touched id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Confirmed Detail </label>
+    </div>
+
+    <!-- Sign up button -->
+    <button class="btn btn-my mt-2" (click)="updateForm()" type="submit">Update</button>
+    <hr>
+</div>
+
+    <!-- Default form register -->

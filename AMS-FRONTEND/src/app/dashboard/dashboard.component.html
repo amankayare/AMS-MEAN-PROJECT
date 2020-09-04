@@ -1,0 +1,76 @@
+<!-- Navigation -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark nav-back ">
+    <div class="container d-flex justify-content-between ">
+        <div class="d-flex">
+            <a class="navbar-brand" routerLink="/dashboard">
+                <img src="../../assets/logo.png" height="70px" width="70px" class="" alt=""></a>
+            <h1 class="text-white ml-2 mt-3 logo-name">ATTENSYS</h1>
+            <button (click)="openNav()" class="btn btn-danger mb-btn ml-2">
+                <fa-icon class="icon" [icon]="faBars"></fa-icon>
+            </button>
+            <!-- Use any element to open/show the overlay navigation menu -->
+
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active d-flex align">
+                    <div class="user-details">
+                        <h4 class="mt-2 text-white" style="font-weight:900">{{first}} {{last}}</h4>
+                        <h6 class="mt-2 text-white">{{enroll}}</h6>
+                    </div>
+
+                    <!-- <h3 class="mt-2 text-white">{{first}}  {{last}}</h3>-->
+
+                    <button class="ml-4 mt-2 btn text-white logout" type="button" (click)="logout();">logout</button>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container-fluid ">
+    <!-- Content Row -->
+    <div class="row mt-4 ml-0">
+        <!-- Sidebar Column -->
+        <div class="col-lg-2 mb-4 side-line">
+            <div class="list-group side-b">
+                <a routerLink="/dashboard"  class="list-group-item side">Home</a>
+                <a routerLink="/dashboard/allStudent"  class="view overlay list-group-item side">All students</a>
+                <a routerLink="/dashboard/addStudent" class="list-group-item side">Add Student</a>
+                <a routerLink="/dashboard/uploadAttendence" class="list-group-item side">Upload Attendence</a>
+                <a routerLink="/dashboard/addCourse" class="list-group-item side">Add Course</a>
+                <a routerLink="/dashboard/viewAttendence" class="list-group-item side">View Attendence</a>
+                <a routerLink="/dashboard/profile" class="list-group-item side">Profile</a>
+
+            </div>
+        </div>
+        <div class="col-lg-9 mb-4 ">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a routerLink="/dashboard" class="closebtn" (click)="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a routerLink="/dashboard"  (click)="closeNav()" class="">Home</a>
+        <a routerLink="/dashboard/allStudent" (click)="closeNav()" class="">All students</a>
+        <a routerLink="/dashboard/addStudent"  (click)="closeNav()" class="">Add Student</a>
+        <a routerLink="/dashboard/uploadAttendence"  (click)="closeNav()" class="">Upload Attendence</a>
+        <a routerLink="/dashboard/addCourse"  (click)="closeNav()" class="">Add Course</a>
+        <a routerLink="/dashboard/viewAttendence"  (click)="closeNav()" class="">View Attendence</a>
+        <a routerLink="/dashboard/profile"  (click)="closeNav()" class="">Profile</a>
+        <button class="btn btn-danger" (click)="logout()">logout</button>
+
+    </div>
+
+</div>

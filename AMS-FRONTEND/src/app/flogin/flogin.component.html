@@ -1,0 +1,46 @@
+<div class="bg-dark nav-bar d-flex align-items-center  sticky">
+    <img src="../../assets/logo.png" height="101%" alt="">
+    <h1 class="text-white ml-2">ATTENSYS</h1>
+
+</div>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680" style="width:89%;">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Faculty Login</h2>
+                <div [formGroup]="fbFormGroup">
+
+                    <div class="row row-space">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <label class="label">UserId</label>
+                                <input class="input--style-4" formControlName="employeeId" placeholder="Enter your user id"
+                                    type="email" name="email"></div>
+                        </div>
+
+                    </div>
+                    <div class="row row-space">
+
+                        <div class="col-12 col-sm-12">
+                            <div class="input-group">
+                                <label class="label">Password</label>
+                                <input class="input--style-4" formControlName="password"
+                                    placeholder="Enter your password" type="password" name="last_name"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-t-15 d-flex flex-column ">
+                        <button class="btn btn--radius-2 btn--blue" [disabled]="!fbFormGroup.valid" (click)="login()" type="submit">Submit</button>
+                        <small class="font-italic mt-2">* user id will be the same as your employee id</small>
+                        <a routerLink="/login" class="h5 mt-2">Student??</a>
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" *ngIf="invalidCredential">
+                        Invalid Credential!!!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

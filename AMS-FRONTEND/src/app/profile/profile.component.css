@@ -1,0 +1,30 @@
+.btn-my{
+    background:#4272d7;
+    color: #ffffff;
+}
+.input-icons i { 
+    position: absolute; 
+} 
+  
+.input-icons { 
+    width: 107%; 
+    margin-bottom: 10px; 
+    text-align: left;
+} 
+  
+.icon { 
+    padding: 10px; 
+    min-width: 40px;
+    z-index: 99;
+} 
+  
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    text-align: left; 
+
+} 
+.eyeBtn{
+    background:white;
+    border:0.01px solid grey;
+}
